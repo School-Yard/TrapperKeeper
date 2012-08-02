@@ -1,13 +1,22 @@
 {
-  "name": "Trapper-Keeper",
+  "name": "trapperkeeper",
   "version": "0.0.1",
   "start": "node ./app.js",
   "dependencies": {
-
+    "eventemitter2": "0.4.9",
+    "utile": "0.1.3",
+    "i": "0.3.0",
+    "mongodb": "1.1.2"
+  },
+  "devDependencies": {
+    "mocha": "~1.3.2",
+    "should": "~1.1.0"
   },
   "scripts": {
-    "start": "node ./app.js"
+    "start": "node ./app.js",
+    "test": "mocha test"
   },
+  "main": "./lib/trapper_keeper",
   "engines": {
     "node": ">=0.6.x"
   }

@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "node ./app.js",
-    "test": "mocha test"
+    "test": "mocha test/**"
   },
   "main": "./lib/trapper_keeper",
   "engines": {

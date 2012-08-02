@@ -30,11 +30,11 @@ resource.get(id, callback);
 
 resource.create(attrs, callback);
 
-resource.save(obj, callback);
+resource.save(id, attrs, callback);
 
 resource.destroy(id, callback);
 
-resource.update(id, obj, callback);
+resource.update(id, attrs, callback);
 
 resouce.find(conditions, callback);
 

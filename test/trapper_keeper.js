@@ -5,7 +5,7 @@ var trapper_keeper = require('../lib/trapper_keeper'),
 describe('trapper_keeper', function() {
 
   describe("connect()", function() {
-    var db; 
+    var db;
 
     before(function() {
       db = trapper_keeper.connect('mongodb', 'mongodb://127.0.0.1', 27017, { database: 'awesome' });

@@ -17,9 +17,10 @@ var db = trapper_keeper.connect('mongodb', 'mongodb://127.0.0.1', 27017, { datab
 // Namespace will correspond with data store key, collection or table
 var resource = db.resource('namespace');
 
-// You can now run CRUD functions using the resouce
-resource.get(id, callback);
-resource.create(attrs, callback);
+db.connection.on('ready', function() {
+  resource.get(id, callback);
+  resource.create(attrs, callback);
+});
 ```
 
 ## Function Signatures

@@ -1,0 +1,14 @@
+{
+  "name": "Trapper-Keeper",
+  "version": "0.0.1",
+  "start": "node ./app.js",
+  "dependencies": {
+
+  },
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "engines": {
+    "node": ">=0.6.x"
+  }
+}

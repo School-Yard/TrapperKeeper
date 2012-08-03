@@ -3,6 +3,8 @@ Trapper Keeper
 
 A super lightweight and storage agnostic data abstraction layer. 
 
+[![Build Status](https://secure.travis-ci.org/TxSSC/TrapperKeeper.png?branch=master)](http://travis-ci.org/TxSSC/TrapperKeeper)
+
 When you don't want to use Resourceful throw it in Trapper Keeper. A lot of the underlying code and engine structure
 is based on Resouceful but all the hooks, events and relationships are stripped out. 
 

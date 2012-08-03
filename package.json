@@ -1,20 +1,27 @@
 {
   "name": "trapperkeeper",
+  "description": "a lightweight, storage agnostic data abstraction based on Resourceful",
   "version": "0.0.1",
-  "start": "node ./app.js",
+  "author": "Cody Stoltman <particlebanana@gmail.com>",
+  "url": "http://github.com/TxSSC/TrapperKeeper",
+  "keywords": ["database", "ODM", "resourceful"],
   "dependencies": {
-    "eventemitter2": "0.4.9",
-    "utile": "0.1.3",
-    "i": "0.3.0",
-    "mongodb": "1.1.2"
+    "eventemitter2": "0.4.x",
+    "utile": "0.1.x",
+    "i": "0.3.x",
+    "mongodb": "1.1.x"
   },
   "devDependencies": {
-    "mocha": "~1.3.2",
-    "should": "~1.1.0"
+    "mocha": "*",
+    "should": "*"
   },
   "scripts": {
     "start": "node ./app.js",
     "test": "mocha test/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TxSSC/TrapperKeeper.git"
   },
   "main": "./lib/trapper_keeper",
   "engines": {

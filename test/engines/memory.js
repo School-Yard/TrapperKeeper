@@ -8,11 +8,10 @@ describe('memory', function() {
   before(function(done) {
     db = trapper_keeper.connect('memory');
     resource = db.resource('test');
+
     db.connection.on('ready', function() {
       done();
     });
-
-    db.connection.ready(); // Manually fire ready event
   });
 
   describe('.get()', function() {

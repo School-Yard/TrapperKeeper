@@ -6,8 +6,6 @@
   "url": "http://github.com/TxSSC/TrapperKeeper",
   "keywords": ["database", "ODM", "resourceful"],
   "dependencies": {
-    "eventemitter2": "0.4.x",
-    "utile": "0.1.x",
     "i": "0.3.x",
     "mongodb": "1.1.x"
   },

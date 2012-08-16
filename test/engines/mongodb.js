@@ -2,21 +2,26 @@ var trapper_keeper = require('../../lib/trapper_keeper'),
     assert = require('assert'),
     should = require('should');
 
-describe('mongodb', function() {
-  var db, resource;
+var db, resource;
 
-  before(function(done) {
-    db = trapper_keeper.connect('mongodb', 'mongodb://127.0.0.1', 27017, { database: 'test', safe: true });
-    resource = db.resource('test');
+before(function(done) {
+  db = trapper_keeper.connect('mongodb', 'mongodb://127.0.0.1', 27017, { database: 'test', safe: true });
+  resource = db.resource('test');
 
-    db.connection.on('ready', function() {
-      db.connection.connection.collection('test', function(err, collection) {
-        collection.drop(function() {
-          done();
-        });
-      });
+  db.on('ready', function() {
+    done();
+  });
+});
+
+after(function(done) {
+  db.connection.collection('test', function(err, collection) {
+    collection.drop(function() {
+      done();
     });
   });
+});
+
+describe('mongodb', function() {
 
   describe('.get()', function() {
     var res;
@@ -43,11 +48,8 @@ describe('mongodb', function() {
     it('should insert a record', function(done) {
       var record = { name: 'Screetch', title: 'student' };
       resource.create(record, function(err, result) {
-        // Get the record to ensure it was inserted
-        resource.get(result.id, function(err, res) {
-          res.name.should.equal('Screetch');
-          done();
-        });
+        result.name.should.equal('Screetch');
+        done();
       });
     });
   });

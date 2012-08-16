@@ -9,7 +9,7 @@ describe('memory', function() {
     db = trapper_keeper.connect('memory');
     resource = db.resource('test');
 
-    db.connection.on('ready', function() {
+    db.on('ready', function() {
       done();
     });
   });

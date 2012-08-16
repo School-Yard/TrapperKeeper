@@ -1,7 +1,7 @@
 {
   "name": "trapperkeeper",
   "description": "a lightweight, storage agnostic data abstraction based on Resourceful",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Cody Stoltman <particlebanana@gmail.com>",
   "url": "http://github.com/TxSSC/TrapperKeeper",
   "keywords": ["database", "ODM", "resourceful"],

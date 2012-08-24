@@ -3,8 +3,13 @@
   "description": "a lightweight, storage agnostic data abstraction based on Resourceful",
   "version": "0.0.4",
   "author": "Cody Stoltman <particlebanana@gmail.com>",
-  "url": "http://github.com/TxSSC/TrapperKeeper",
+  "maintainers" : [
+    "particlebanana <particlebanana@gmail.com>",
+    "vanetix <matmcfarland@gmail.com>"
+  ],
+  "url": "http://github.com/School-Yard/TrapperKeeper",
   "keywords": ["database", "ODM", "resourceful"],
+  "license" : "MIT",
   "dependencies": {
     "i": "0.3.x",
     "mongodb": "1.1.x"
@@ -18,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/TxSSC/TrapperKeeper.git"
+    "url": "git://github.com/School-Yard/TrapperKeeper.git"
   },
   "main": "./lib/trapper_keeper",
   "engines": {

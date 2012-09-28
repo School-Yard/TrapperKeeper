@@ -88,7 +88,7 @@ describe('mongodb', function() {
     it('should destroy a record', function(done) {
       resource.destroy(document.id, function(err, result) {
         resource.get(document.id, function(err, res) {
-          res.should.eql({});
+          should.not.exist(res);
           done();
         });
       });

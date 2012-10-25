@@ -12,7 +12,8 @@
   "license" : "MIT",
   "dependencies": {
     "i": "0.3.x",
-    "mongodb": "1.1.x"
+    "mongodb": "1.1.x",
+    "mysql": "2.0.x"
   },
   "devDependencies": {
     "mocha": "*",

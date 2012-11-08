@@ -28,5 +28,6 @@ Support.Setup = function(callback) {
 };
 
 Support.Teardown = function(callback) {
-  MySQL.connection.query('DROP TABLE test', callback);
+  MySQL.connection.query('DROP TABLE IF EXISTS test_two, test',
+    callback);
 };

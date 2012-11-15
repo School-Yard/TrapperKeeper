@@ -1,12 +1,12 @@
 Trapper Keeper
 ==============
 
-A super lightweight and storage agnostic data abstraction layer. 
+A super lightweight and storage agnostic data abstraction layer.
 
 [![Build Status](https://secure.travis-ci.org/School-Yard/TrapperKeeper.png?branch=master)](http://travis-ci.org/School-Yard/TrapperKeeper)
 
 When you don't want to use Resourceful throw it in Trapper Keeper. A lot of the underlying code and engine structure
-is based on Resouceful but all the hooks, events and relationships are stripped out. 
+is based on Resouceful but all the hooks, events and relationships are stripped out.
 
 ## Example
 
@@ -49,6 +49,12 @@ resource.update(id, attrs, callback);
 resouce.find(conditions, callback);
 
 resouce.all(callback);
+
+/**
+ * Only method that isn't a CRUD method on resource
+ * Initializes an engine to use as a cache on the resource
+ */
+resource.cache(engine, options);
 ```
 
 ## Installation

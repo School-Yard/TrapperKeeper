@@ -60,7 +60,10 @@ describe('mysql .find()', function() {
         should.not.exist(err);
         should.exist(results);
         results.should.have.length(1);
-        results[0].should.have.keys('id','parent','details','name','title');
+        results[0].should.have.keys(
+          'test.id', 'test.title', 'test.name',
+          'test_two.id', 'test_two.parent','test_two.details'
+        );
         return done();
       });
     });

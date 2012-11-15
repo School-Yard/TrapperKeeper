@@ -5,7 +5,7 @@ describe('memory', function() {
   var db;
 
   before(function(done) {
-    db = trapper_keeper.connect('memory');
+    db = trapper_keeper.Connect('memory');
     db.on('ready', function() {
       done();
     });

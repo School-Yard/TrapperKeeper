@@ -5,7 +5,7 @@ var trapper_keeper = require('../../lib/trapper_keeper'),
 var db, resource;
 
 before(function(done) {
-  db = trapper_keeper.connect('mongodb', 'mongodb://127.0.0.1', 27017, { database: 'test', safe: true });
+  db = trapper_keeper.Connect('mongodb', 'mongodb://127.0.0.1', 27017, { database: 'test', safe: true });
   resource = db.resource('test');
 
   db.on('ready', function() {
@@ -14,7 +14,7 @@ before(function(done) {
 });
 
 after(function(done) {
-  db.connection.collection('test', function(err, collection) {
+  db.Connection.collection('test', function(err, collection) {
     collection.drop(function() {
       done();
     });

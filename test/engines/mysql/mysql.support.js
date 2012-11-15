@@ -11,11 +11,11 @@ Support.Setup = function(callback) {
         password: 'testing'
   };
 
-  MySQL = TK.connect('mysql', 'mysql://127.0.0.1', 3306, options);
+  MySQL = TK.Connect('mysql', 'mysql://127.0.0.1', 3306, options);
   Table = MySQL.resource('test');
 
   MySQL.on('ready', function() {
-    MySQL.connection.query(
+    MySQL.Connection.query(
       'CREATE TABLE IF NOT EXISTS test (' +
         '`id` INT unsigned AUTO_INCREMENT PRIMARY KEY,' +
         '`title` VARCHAR(255),' +
@@ -28,6 +28,6 @@ Support.Setup = function(callback) {
 };
 
 Support.Teardown = function(callback) {
-  MySQL.connection.query('DROP TABLE IF EXISTS test_two, test',
+  MySQL.Connection.query('DROP TABLE IF EXISTS test_two, test',
     callback);
 };

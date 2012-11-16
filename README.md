@@ -33,6 +33,18 @@ Trapper Keeper currently has engines for:
   - Memory
   - MongoDB
 
+### Caching
+
+Using the cache feature is optional, currently only these are the only engines that support this feature:
+
+  - Memory
+
+An example of a resource with caching:
+```
+// Define a resource with cache functionality
+var resource = connection.resource('user').cache('memory');
+```
+
 ## Function Signatures
 
 ``` js
@@ -49,12 +61,6 @@ resource.update(id, attrs, callback);
 resouce.find(conditions, callback);
 
 resouce.all(callback);
-
-/**
- * Only method that isn't a CRUD method on resource
- * Initializes an engine to use as a cache on the resource
- */
-resource.cache(engine, options);
 ```
 
 ## Installation

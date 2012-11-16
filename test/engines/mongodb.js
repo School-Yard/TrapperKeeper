@@ -14,7 +14,7 @@ before(function(done) {
 });
 
 after(function(done) {
-  db.Connection.collection('test', function(err, collection) {
+  db.connection.collection('test', function(err, collection) {
     collection.drop(function() {
       done();
     });

@@ -8,7 +8,7 @@ describe('mysql .find()', function() {
   before(function(done) {
     MySQL = Support.Setup(function(err) {
       if(err) return done(err);
-      MySQL.Connection.Connection.query(
+      MySQL.connection.connection.query(
       'CREATE TABLE IF NOT EXISTS test_two (' +
         '`id` INT unsigned AUTO_INCREMENT PRIMARY KEY,' +
         '`parent` INT unsigned,' +

@@ -15,7 +15,7 @@ Support.Setup = function(callback) {
   Table = MySQL.resource('test');
 
   MySQL.on('ready', function() {
-    MySQL.Connection.query(
+    MySQL.connection.query(
       'CREATE TABLE IF NOT EXISTS test (' +
         '`id` INT unsigned AUTO_INCREMENT PRIMARY KEY,' +
         '`title` VARCHAR(255),' +
@@ -28,6 +28,6 @@ Support.Setup = function(callback) {
 };
 
 Support.Teardown = function(callback) {
-  MySQL.Connection.query('DROP TABLE IF EXISTS test_two, test',
+  MySQL.connection.query('DROP TABLE IF EXISTS test_two, test',
     callback);
 };

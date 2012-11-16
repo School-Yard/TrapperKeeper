@@ -35,7 +35,7 @@ Trapper Keeper currently has engines for:
 
 ### Caching
 
-Using the cache feature is optional, currently only these are the only engines that support this feature:
+Using the cache feature is optional, current engines that support this feature:
 
   - Memory
 

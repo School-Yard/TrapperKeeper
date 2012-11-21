@@ -13,7 +13,9 @@
   "dependencies": {
     "i": "0.3.x",
     "mongodb": "1.1.x",
-    "mysql": "2.0.x"
+    "mysql": "2.0.x",
+    "hiredis": "0.1.x",
+    "redis": "0.8.x"
   },
   "devDependencies": {
     "mocha": "*",

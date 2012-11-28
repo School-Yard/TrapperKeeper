@@ -5,7 +5,7 @@ describe('redis', function() {
   var connection;
 
   before(function(done) {
-    connection = TK.connect('redis');
+    connection = TK.Connect('redis');
     connection.on('ready', function() {
       done();
     });

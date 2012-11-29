@@ -34,7 +34,7 @@ describe('redis', function() {
     it('should return an id in the attributes', function(done) {
       var attrs = { name: 'test' };
       Resource.save(101, attrs, function(err, result) {
-        result.id.should.equal(101);
+        result.id.should.equal('101');
         result.name.should.equal('test');
         done();
       });

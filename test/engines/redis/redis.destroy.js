@@ -1,13 +1,19 @@
-var trapper_keeper = require('../../../lib/trapper_keeper'),
+var TK = require('../../../lib/trapper_keeper'),
     should = require('should');
 
-describe('memory', function() {
-  var db;
+describe('redis', function() {
+  var connection;
 
   before(function(done) {
-    db = trapper_keeper.Connect('memory');
-    db.on('ready', function() {
+    connection = TK.Connect('redis');
+    connection.on('ready', function() {
       done();
+    });
+  });
+
+  after(function(done) {
+    connection.connection.flushall(function(err) {
+      done(err);
     });
   });
 
@@ -15,7 +21,7 @@ describe('memory', function() {
     var Resource, doc;
 
     before(function(done) {
-      Resource = db.resource('test');
+      Resource = connection.resource('test');
       var attrs = { name: 'Screetch', title: 'student' };
       Resource.create(attrs, function(err, result) {
         doc = result;

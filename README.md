@@ -1,12 +1,12 @@
 Trapper Keeper
 ==============
 
-A super lightweight and storage agnostic data abstraction layer. 
+A super lightweight and storage agnostic data abstraction layer.
 
 [![Build Status](https://secure.travis-ci.org/School-Yard/TrapperKeeper.png?branch=master)](http://travis-ci.org/School-Yard/TrapperKeeper)
 
 When you don't want to use Resourceful throw it in Trapper Keeper. A lot of the underlying code and engine structure
-is based on Resouceful but all the hooks, events and relationships are stripped out. 
+is based on Resouceful but all the hooks, events and relationships are stripped out.
 
 ## Example
 
@@ -32,6 +32,21 @@ Trapper Keeper currently has engines for:
 
   - Memory
   - MongoDB
+  - Redis
+  - MySQL
+
+### Caching
+
+Using the cache feature is optional, current engines that support this feature:
+
+  - Memory
+  - Redis
+
+An example of a resource with caching:
+```
+// Define a resource with cache functionality
+var resource = connection.resource('user').cache('memory');
+```
 
 ## Function Signatures
 

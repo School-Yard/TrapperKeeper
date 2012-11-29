@@ -8,7 +8,7 @@ describe('trapper_keeper', function() {
     var db;
 
     before(function() {
-      db = trapper_keeper.connect('mongodb', 'mongodb://127.0.0.1', 27017, { database: 'awesome' });
+      db = trapper_keeper.Connect('mongodb', 'mongodb://127.0.0.1', 27017, { database: 'awesome' });
     });
 
     it("should create a connection object", function() {

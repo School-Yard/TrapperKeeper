@@ -7,11 +7,11 @@ Support.Setup = function(callback) {
   var Table,
       options = {
         database: 'test',
-        user: 'test',
-        password: 'testing'
+        user: 'root',
+        password: ''
   };
 
-  MySQL = TK.connect('mysql', 'mysql://127.0.0.1', 3306, options);
+  MySQL = TK.Connect('mysql', 'mysql://127.0.0.1', 3306, options);
   Table = MySQL.resource('test');
 
   MySQL.on('ready', function() {
@@ -28,5 +28,6 @@ Support.Setup = function(callback) {
 };
 
 Support.Teardown = function(callback) {
-  MySQL.connection.query('DROP TABLE test', callback);
+  MySQL.connection.query('DROP TABLE IF EXISTS test_two, test',
+    callback);
 };

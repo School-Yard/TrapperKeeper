@@ -7,8 +7,8 @@ Support.Setup = function(callback) {
   var Table,
       options = {
         database: 'test',
-        user: 'test',
-        password: 'testing'
+        user: 'root',
+        password: ''
   };
 
   MySQL = TK.Connect('mysql', 'mysql://127.0.0.1', 3306, options);

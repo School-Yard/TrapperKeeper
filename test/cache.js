@@ -1,14 +1,14 @@
 var TK = require('../lib/trapper_keeper'),
     Cache = require('../lib/trapper_keeper/cache'),
     Memory = require('../lib/trapper_keeper/engines/memory'),
-    MongoDB = require('../lib/trapper_keeper/engines/mongodb'),
+    Redis = require('../lib/trapper_keeper/engines/redis'),
     should = require('should');
 
 describe('Cache', function() {
   var resource;
 
   before(function(done) {
-    var connection = TK.Connect('mongodb', 'mongodb://127.0.0.1', 27017, { database: 'test' });
+    var connection = TK.Connect('redis');
 
     connection.on('ready', function() {
       resource = connection.resource('test');
@@ -27,7 +27,7 @@ describe('Cache', function() {
       resource.connection.should.have.property('cache');
       resource.connection.cache.should.be.instanceof(Memory);
       resource.connection.should.have.property('connection');
-      resource.connection.connection.should.be.instanceof(MongoDB);
+      resource.connection.connection.should.be.instanceof(Redis);
     });
   });
 

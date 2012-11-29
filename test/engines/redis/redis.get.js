@@ -1,20 +1,26 @@
-var trapper_keeper = require('../../../lib/trapper_keeper'),
+var TK = require('../../../lib/trapper_keeper'),
     should = require('should');
 
-describe('memory', function() {
-  var db;
+describe('redis', function() {
+  var connection;
 
   before(function(done) {
-    db = trapper_keeper.Connect('memory');
-    db.on('ready', function() {
+    connection = TK.Connect('redis');
+    connection.on('ready', function() {
       done();
+    });
+  });
+
+  after(function(done) {
+    connection.connection.flushall(function(err) {
+      done(err);
     });
   });
 
   describe('.get()', function() {
     var Resource;
     before(function() {
-      Resource = db.resource('test');
+      Resource = connection.resource('test');
     });
 
     describe('with valid record', function() {

@@ -1,7 +1,7 @@
 {
   "name": "trapperkeeper",
   "description": "a lightweight, storage agnostic data abstraction based on Resourceful",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "author": "Cody Stoltman <particlebanana@gmail.com>",
   "maintainers" : [
     "particlebanana <particlebanana@gmail.com>",
@@ -13,14 +13,16 @@
   "dependencies": {
     "i": "0.3.x",
     "mongodb": "1.1.x",
-    "mysql": "2.0.x"
+    "mysql": "2.0.x",
+    "hiredis": "0.1.x",
+    "redis": "0.8.x"
   },
   "devDependencies": {
     "mocha": "*",
     "should": "*"
   },
   "scripts": {
-    "test": "mocha test/**/**"
+    "test": "mocha test/* test/*/*"
   },
   "repository": {
     "type": "git",

@@ -1,13 +1,19 @@
-var trapper_keeper = require('../../../lib/trapper_keeper'),
+var TK = require('../../../lib/trapper_keeper'),
     should = require('should');
 
-describe('memory', function() {
-  var db;
+describe('redis', function() {
+  var connection;
 
   before(function(done) {
-    db = trapper_keeper.Connect('memory');
-    db.on('ready', function() {
+    connection = TK.Connect('redis');
+    connection.on('ready', function() {
       done();
+    });
+  });
+
+  after(function(done) {
+    connection.connection.flushall(function(err) {
+      done(err);
     });
   });
 
@@ -15,7 +21,7 @@ describe('memory', function() {
     describe('by attribute', function() {
       var Resource;
       before(function() {
-        Resource = db.resource('test');
+        Resource = connection.resource('test');
       });
 
       before(function(done) {
@@ -34,7 +40,7 @@ describe('memory', function() {
       });
 
       it('should return an empty array if no matches', function(done) {
-        Resource.find({}, function(err, result) {
+        Resource.find({ name: 'AC Slater'}, function(err, result) {
           result.should.be.an.instanceOf(Array);
           result.length.should.equal(0);
           done();
@@ -45,8 +51,8 @@ describe('memory', function() {
     describe('when multiple namespaces', function() {
       var ns1, ns2;
       before(function(done) {
-        ns1 = db.resource('ns1');
-        ns2 = db.resource('ns2');
+        ns1 = connection.resource('ns1');
+        ns2 = connection.resource('ns2');
 
         var attrs = { name: 'Screetch', title: 'student' };
 

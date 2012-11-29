@@ -32,12 +32,15 @@ Trapper Keeper currently has engines for:
 
   - Memory
   - MongoDB
+  - Redis
+  - MySQL
 
 ### Caching
 
 Using the cache feature is optional, current engines that support this feature:
 
   - Memory
+  - Redis
 
 An example of a resource with caching:
 ```

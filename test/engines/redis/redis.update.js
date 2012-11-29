@@ -2,12 +2,18 @@ var TK = require('../../../lib/trapper_keeper'),
     should = require('should');
 
 describe('redis', function() {
-  var db;
+  var connection;
 
   before(function(done) {
-    db = TK.Connect('redis');
-    db.on('ready', function() {
+    connection = TK.Connect('redis');
+    connection.on('ready', function() {
       done();
+    });
+  });
+
+  after(function(done) {
+    connection.connection.flushall(function(err) {
+      done(err);
     });
   });
 
@@ -15,7 +21,7 @@ describe('redis', function() {
     var Resource, doc;
 
     before(function(done) {
-      Resource = db.resource('test');
+      Resource = connection.resource('test');
       var attrs = { name: 'Screetch', title: 'student' };
       Resource.create(attrs, function(err, result) {
         doc = result;
@@ -37,7 +43,7 @@ describe('redis', function() {
       it('should return a status', function(done) {
         Resource.update(100, doc, function(err, result) {
           should.exist(err);
-          result.should.equal(0);
+          err.message.should.equal('No record found with that id');
           done();
         });
       });

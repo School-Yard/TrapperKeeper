@@ -11,6 +11,12 @@ describe('redis', function() {
     });
   });
 
+  after(function(done) {
+    connection.connection.flushall(function(err) {
+      done(err);
+    });
+  });
+
   describe('.all()', function() {
 
     var Resource;

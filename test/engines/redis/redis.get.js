@@ -2,19 +2,25 @@ var TK = require('../../../lib/trapper_keeper'),
     should = require('should');
 
 describe('redis', function() {
-  var db;
+  var connection;
 
   before(function(done) {
-    db = TK.Connect('redis');
-    db.on('ready', function() {
+    connection = TK.Connect('redis');
+    connection.on('ready', function() {
       done();
+    });
+  });
+
+  after(function(done) {
+    connection.connection.flushall(function(err) {
+      done(err);
     });
   });
 
   describe('.get()', function() {
     var Resource;
     before(function() {
-      Resource = db.resource('test');
+      Resource = connection.resource('test');
     });
 
     describe('with valid record', function() {

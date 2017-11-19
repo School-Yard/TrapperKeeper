@@ -80,5 +80,5 @@ All tests are written with [mocha][0] and should be run with [npm][1]:
   $ npm test
 ```
 
-[0]: http://visionmedia.github.com/mocha/
+[0]: http://mochajs.org/
 [1]: http://npmjs.org
